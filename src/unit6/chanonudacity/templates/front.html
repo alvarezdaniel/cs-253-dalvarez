@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>/asciichan/</title>
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" media="all" href="../stylesheets/blueprint.css"/>
+		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+	</head>
+    <body class="container" lang="en">
+        <h1>/ascii/</h1>
+        <div class="span-10 colborder">
+            <form method="post">
+                <label>
+                    <div>Title</div>
+                    <input type="text" name="title" value="{{title}}">
+                </label>
+                <label>
+                    <div>Art</div>
+                    <textarea name="art">{{art}}</textarea>
+                </label>
+                {% if error %} <div class="error"> {{error}} </div> {% endif %}
+                <input type="submit" value="Add!">
+            </form>
+        </div>
+        <div id="map" class="span-12 last">
+            {% if img_url %}
+                <img src="{{img_url}}" alt="map" />
+            {% endif %}
+        </div>
+    <hr>
+        {% for art in arts %}
+            <div class="art">
+                <div class="art-title"> {{ art.title }} </div>
+                <pre class="art-body">{{ art.art }}</pre>
+            </div>
+        {% endfor %}
+	</body>
+	
+</html>
+
+
+
