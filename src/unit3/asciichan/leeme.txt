@@ -1,0 +1,3 @@
+It worked fine - after I had added these two lines to the libraries-part in the app.yaml
+
+name: jinja2 version: latest
