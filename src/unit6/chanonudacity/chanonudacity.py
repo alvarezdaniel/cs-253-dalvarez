@@ -80,6 +80,5 @@ class MainPage(Handler):
         else:
             error = "we need both title and artwork"
             self.render_front(title, art, error)
-
     
 app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
